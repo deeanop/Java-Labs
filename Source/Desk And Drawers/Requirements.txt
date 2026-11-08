@@ -1,0 +1,30 @@
+A drawer is characterized by its width, length, and height.
+
+A desk has two drawers and, obviously, also has its own width, length, and height.
+
+Create the `Sertar` (Drawer) and `Birou` (Desk) classes according to the specifications above.
+
+Create an appropriate constructor for each class so that the characteristics of each instance are initialized when it is created.
+
+### Drawer Class (`Sertar`)
+
+The `Sertar` class contains a method called `tipareste()` (print), whose execution will display the drawer in the following format:
+
+`"Drawer " + l + L + H`
+
+where:
+- `l` is the drawer's width.
+- `L` is the drawer's length.
+- `H` is the drawer's height.
+
+### Desk Class (`Birou`)
+
+The `Birou` class contains a method called `tipareste()` that prints all the components of the desk.
+
+### Requirements
+
+Inside a `main` method:
+
+1. Create two drawer objects.
+2. Create one desk object.
+3. Print all the components of the desk.

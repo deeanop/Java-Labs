@@ -1,0 +1,83 @@
+The task is to model, using objects and interfaces, a message communication system between several people.
+
+For simplicity, we assume that only two methods of communication are available: email and traditional letters (postal mail).
+
+A person X cannot send a message directly to person Y because, generally, the distance between people is too great. Therefore, whenever a person wants to send a message, they must use a transmitter object that knows how to send messages to various recipients, including person Y.
+
+In practice, if X wants to send an email to Y, they will use an `EMailTransmitter` object. If they want to send a letter to Y, they will use a `MailTransmitter` object.
+
+In both cases, X will provide:
+- Their own identity (using `this`).
+- The recipient's identity.
+- The message they wish to send.
+
+Obviously, the two communication methods must differ in some way; otherwise, there would be no reason to have two different types of objects.
+
+### Email Communication
+
+When an email is sent, the recipient is immediately notified by the intermediate object (`EMailTransmitter`).
+
+Notifying a person involves executing a method of the class that models a person. It is the responsibility of this method to request the corresponding message from the `EMailTransmitter` object.
+
+### Traditional Mail Communication
+
+When a letter is sent, the recipient is not notified immediately.
+
+Even in real life, a letter is not delivered to its destination as soon as it is placed in a mailbox. Instead, letters are delivered at specific times of the day (morning, evening, etc.).
+
+In our application, we assume that letter recipients are notified only when the mailbox becomes full.
+
+This means that the `MailTransmitter` object, which models the traditional postal system, will have a message buffer (for example, an array) containing N elements.
+
+Recipients are notified only when the buffer contains N messages.
+
+Notifying a recipient involves the same process as in the email system, ensuring that both communication methods are handled uniformly.
+
+After all recipients have been notified and have collected their letters, the buffer will be emptied.
+
+### System Design
+
+The system must consist of loosely coupled modules, allowing it to be easily extended.
+
+In other words, we must consider that, in the future, other communication methods (fax, SMS, etc.) may need to be supported. These should be integrated into our system without requiring significant modifications.
+
+The `EMailTransmitter` and `MailTransmitter` classes will implement the `Transmitter` interface. Therefore, they must provide specific implementations of the following methods:
+
+- `store`
+- `retrieve`
+
+Each person will contain a reference to a `Transmitter` object through which they want to send messages.
+
+Obviously, this object can be changed using the `setTransmitter` method, which every person has.
+
+### Main Application Logic
+
+The entire application is based on the following two rules:
+
+**1. Sending messages**
+
+During the execution of the `send` operation, the `store` method of the currently assigned `Transmitter` object must be used.
+
+**2. Receiving messages**
+
+When a person is notified that they have received a message, that person will also receive, as a parameter of the notification method, a reference to the `Transmitter` object that performed the notification.
+
+The recipient will then request the message from the `Transmitter` object using the `retrieve` method.
+
+Obviously, the recipient must provide their identity because a traditional mail transmitter may have several letters in its buffer and must retrieve the one corresponding to the specific recipient.
+
+After receiving the message, the recipient will display it on the screen.
+
+### Example Output
+
+The application should produce output similar to the following:
+
+```text
+Paul said to Andreea (EMAIL): "Write to Ioana and ask her to give me her email address"
+
+Andreea said to Ioana (MAIL): "Paul says to send him your email address"
+
+Gabriel said to Paul (MAIL): "How are you?"
+
+Ioana said to Paul (EMAIL): "My email address is: ioana@yahoo.com"
+```

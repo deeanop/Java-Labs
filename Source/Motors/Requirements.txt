@@ -1,0 +1,3 @@
+Create a class that contains two non-static private attributes: an `int` and a `char`, which are not explicitly initialized.
+
+Print their values to verify whether Java performs default initialization.

@@ -1,0 +1,105 @@
+We want to model, using a Java program, several types of aircraft that make up a country's air fleet.
+
+We know that this country has both passenger aircraft and fighter aircraft. Passenger aircraft are of several types, namely Boeing and Concorde. Similarly, fighter aircraft can be either MiGs or TomCats (F14s).
+
+Each type of aircraft will be modeled by a class, while the actual aircraft will be instances of the corresponding classes.
+
+Each aircraft can perform a certain range of operations and procedures, as described below.
+
+First, every aircraft must contain a member variable called `planeID` of type `String` and a public method `String getPlaneID()` that returns the value of this variable.
+
+Furthermore, every aircraft must contain a member variable called `totalEnginePower` of type `int` and a public method `int getTotalEnginePower()` that returns the value of this variable.
+
+Since every aircraft must be able to take off, fly, and land, it makes sense that we should be able to call the following methods on every aircraft:
+
+- `public void takeOff()`
+- `public void land()`
+- `public void fly()`
+
+The `takeOff()` method will display the following text on the screen:
+
+`"PlaneID Value - Initiating takeoff procedure - Starting engines - Accelerating down the runway - Taking off - Retracting gear - Takeoff complete"`
+
+The `fly()` method will display:
+
+`"PlaneID Value - Flying"`
+
+The `land()` method will display:
+
+`"PlaneID Value - Initiating landing procedure - Enabling airbrakes - Lowering gear - Contacting runway - Decelerating - Stopping engines - Landing complete"`
+
+### Passenger Aircraft
+
+Passenger aircraft, and only passenger aircraft, must contain a member variable called `maxPassengers` of type `int` and a public method:
+
+`public int getMaxPassengers()`
+
+This method returns the value of the `maxPassengers` variable.
+
+Concorde passenger aircraft are supersonic. Therefore, it makes sense to call the following methods on objects of this type:
+
+- `public void goSuperSonic()`
+- `public void goSubSonic()`
+
+These methods will display the following messages, respectively:
+
+`"PlaneID Value - Supersonic mode activated"`
+
+`"PlaneID Value - Supersonic mode deactivated"`
+
+### Fighter Aircraft
+
+Fighter aircraft, and only fighter aircraft, have the ability to launch missiles at various targets. Therefore, every fighter aircraft must provide the following method:
+
+`public void launchMissile()`
+
+This method will display the following text:
+
+`"PlaneID Value - Initiating missile launch procedure - Acquiring target - Launching missile - Breaking away - Missile launch complete"`
+
+### MiG Aircraft
+
+MiG aircraft, and only MiG aircraft, have variable geometry wings for high-speed flight and normal flight.
+
+The corresponding class must contain the following methods:
+
+- `public void highSpeedGeometry()`
+- `public void normalGeometry()`
+
+These methods will display the following messages, respectively:
+
+`"PlaneID Value - High speed geometry selected"`
+
+`"PlaneID Value - Normal geometry selected"`
+
+### TomCat Aircraft
+
+TomCat aircraft, and only TomCat aircraft, have the ability to refuel while in flight.
+
+Therefore, objects of this type must provide the following method:
+
+`public void refuel()`
+
+This method will display the following text:
+
+`"PlaneID Value - Initiating refueling procedure - Locating refueller - Catching up - Refueling - Refueling complete"`
+
+---
+
+## Requirements
+
+**1. Implement the classes corresponding to the different types of aircraft.**
+
+Based on the requirements, some functionality and data are common to all aircraft or to several types of aircraft, while other functionality is specific to only one particular type.
+
+Therefore, the common functionality and data must be factored out using class inheritance.
+
+**2. In a `main` method, declare several reference variables.**
+
+All variables must have the same declared type.
+
+Next, create several aircraft objects (at least one of each type).
+
+To reference these objects, use only the previously declared variables, relying on type inheritance.
+
+Finally, call the different operations available for each aircraft/object type.

@@ -1,0 +1,55 @@
+A taxpayer arrives at the local tax payment office.
+
+The clerk searches for the taxpayer (by name or personal identification number – CNP), informs them of the total amount they owe for the current year for all their properties, and can then collect either the full amount or a partial payment.
+
+Each taxpayer may own multiple properties: buildings and/or plots of land.
+
+Each property is located at an address (an address consists of a street name and a street number).
+
+The amount owed each year for each type of property is calculated as follows:
+
+- **For a building:**  
+  `500 * building area (m²)`
+
+- **For a plot of land:**  
+  `350 * land area (m²) / rank of the locality where the land is located`
+
+A locality can have a rank of 1, 2, 3, or 4.
+
+Regardless of whether they have made a payment or not, the taxpayer can request a payment statement containing all the properties they own, together with the amount they owe for the current year for each property.
+
+The statement looks the same regardless of whether the taxpayer has already paid any amount for the current year.
+
+### Payment Statement Example
+
+```text
+Taxpayer: Ion Popescu
+
+Properties
+
+Building: V Parvan Street, No. 2
+Area: 20
+Cost: 10000
+
+Land: V. Parvan Street, No. 2
+Area: 10, Rank: 1
+Cost: 3500
+
+Building: Lugoj Street, No. 4
+Area: 25
+Cost: 12500
+
+Total amount: 26000
+```
+
+### Requirements
+
+Implement some of the classes identified above so that the following operation can be performed:
+
+After finding the taxpayer Ion Popescu, the clerk displays the corresponding payment statement for that taxpayer.
+
+In the `main` method:
+
+1. Instantiate the class that models the concept of a taxpayer.
+2. Set up the properties belonging to that taxpayer.
+3. Display the taxpayer's properties and the corresponding payment statement.

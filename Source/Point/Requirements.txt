@@ -1,0 +1,9 @@
+Create a class called `Punct` (Point) that has two private fields, `x` and `y`, representing its coordinates in a plane.
+
+The class has a single constructor with two parameters, which allows the coordinates of a `Punct` object to be initialized when it is created.
+
+The `PunctColorat` (ColoredPoint) class extends (inherits from) the `Punct` class and also contains a field `c`, representing a color code.
+
+Explain whether or not it is necessary to define a constructor in the `PunctColorat` class in order to create `PunctColorat` objects.
+
+If a constructor is necessary, provide an example of a possible constructor for this class.

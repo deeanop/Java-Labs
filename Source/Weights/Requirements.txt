@@ -1,0 +1,75 @@
+We consider a collection of weights in which the elements are stored in an array.
+
+Each weight has a certain capacity, which can be obtained by calling the method:
+
+`public int capacitate()`
+
+This method is available in every weight object.
+
+Weights can be of the following types:
+
+### 1. Simple Weights
+
+Simple weights have a capacity that is set through their constructor.
+
+### 2. Double Weights
+
+Double weights consist of two weights, which are stored in two fields of type `Greutate` (Weight).
+
+These weights are initialized through the constructor, but they can also be modified during the lifetime of objects of this type using two accessor methods:
+
+- `public void setGreutate1(Greutate g)`
+- `public void setGreutate2(Greutate g)`
+
+The capacity of this type of weight is equal to the sum of the capacities of the two contained weights.
+
+The capacity of this type of weight will not be stored in an attribute. Instead, it will be calculated every time the `capacitate()` method is called on an object of this type.
+
+### 3. Multiple Weights
+
+Multiple weights represent a sequence of weights consisting of simple weights, double weights, and/or potentially other multiple weights.
+
+In other words, a multiple weight represents a collection of weights.
+
+The capacity of this type of weight is equal to the sum of the capacities of all its component weights.
+
+The components of this type of weight are initialized through the class constructor, but another method of inserting components may also be chosen.
+
+As in the previous class, the capacity of this type of weight will not be stored in an attribute. Instead, it will be calculated every time the `capacitate()` method is called on an object of this type.
+
+---
+
+## Weight Collection Class
+
+The system also includes a class called `ColectieGreutati` (WeightCollection), which contains an array of weights. These weights represent the actual contents of the collection.
+
+The `ColectieGreutati` class must contain the following methods:
+
+**1. Adding a weight**
+
+`public void adauga(Greutate g)`
+
+This method is responsible for adding elements to the array of weights.
+
+We assume that a weight collection has a maximum capacity (maximum number of weights), which is set through its constructor.
+
+**2. Calculating the average weight**
+
+`public double medie()`
+
+This method returns the average weight of the collection, calculated as:
+
+`total capacity / number of weights`
+
+---
+
+## Requirements
+
+**1. Implement the classes presented in the diagram.**
+
+**2. Implement a `main` method in which:**
+
+- A `ColectieGreutati` object is created.
+- Several simple, double, and multiple weights are created.
+- These weights are added to the weight collection.
+- The average weight of the collection is displayed.

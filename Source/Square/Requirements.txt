@@ -1,0 +1,16 @@
+A square is characterized by its side length.
+
+Write a class called `Patrat` (Square) that has two constructors:
+
+1. A parameterless constructor that sets the side length of the square to `10`.
+2. Another constructor that sets the side length to a value equal to the parameter passed to the constructor.
+
+Add an appropriate method to the class for printing a square in the following format:
+
+`"Square" l "Area" a`
+
+where:
+- `l` is the value of the square's side length.
+- `a` is the value of the square's area.
+
+Create several objects of type `Patrat` inside a `main` method and print them.
